@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pomodoro.TaskPopup"
+                  xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    
+    <StackLayout Margin="12"
+                 Padding="24"
+                 BackgroundColor="#a1ffffff"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center"
+                 WidthRequest="500">
+        <StackLayout>
+            <Label Text="Task Name" />
+            <Entry x:Name="entryName" FontSize="30"
+                   Text="New Task" />
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Est Pomodoros" />
+            <Entry x:Name="entryNumber" FontSize="30"
+                   Text="1" />
+        </StackLayout>
+        <Button BackgroundColor="DodgerBlue"
+                x:Name="btnSubmit"
+                Clicked="btnSubmit_Clicked"
+                FontSize="30"
+                Text="Submit"
+                TextColor="White" />
+    </StackLayout>
+    
+    
+</pages:PopupPage>

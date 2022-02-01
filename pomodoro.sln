@@ -1,0 +1,35 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomodoro.Android", "pomodoro\pomodoro.Android\pomodoro.Android.csproj", "{ECE39111-684F-4595-9ACD-6C5EEE27246F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "pomodoro", "pomodoro\pomodoro\pomodoro.csproj", "{E2847296-7788-4D2B-BEE1-12A2A1F12D13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ECE39111-684F-4595-9ACD-6C5EEE27246F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ECE39111-684F-4595-9ACD-6C5EEE27246F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ECE39111-684F-4595-9ACD-6C5EEE27246F}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{ECE39111-684F-4595-9ACD-6C5EEE27246F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ECE39111-684F-4595-9ACD-6C5EEE27246F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ECE39111-684F-4595-9ACD-6C5EEE27246F}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{E2847296-7788-4D2B-BEE1-12A2A1F12D13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E2847296-7788-4D2B-BEE1-12A2A1F12D13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E2847296-7788-4D2B-BEE1-12A2A1F12D13}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{E2847296-7788-4D2B-BEE1-12A2A1F12D13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E2847296-7788-4D2B-BEE1-12A2A1F12D13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E2847296-7788-4D2B-BEE1-12A2A1F12D13}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A093D70B-F013-49BD-BA10-D52F3A21B1DF}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pomodoro.Login">
+    <ContentPage.Content>
+
+        <Grid BackgroundColor="#4c9195">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.75*" />
+                <RowDefinition Height="0.25*" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Image Grid.Row="0" Source="PomodoroLogo.png"></Image>
+
+            <StackLayout Grid.Row="1">
+                <Label x:Name="lblUsername"></Label>
+                <Button BackgroundColor="#4c9195" x:Name="btnLoginPopup" Text="Login" Clicked="btnLoginPopup_Clicked"></Button>
+                <Button BackgroundColor="#4c9195" x:Name="btnRegisterPopup" Text="Register Account" Clicked="btnRegisterPopup_Clicked"></Button>
+            </StackLayout>
+
+        </Grid>
+
+       
+    </ContentPage.Content>
+</ContentPage>

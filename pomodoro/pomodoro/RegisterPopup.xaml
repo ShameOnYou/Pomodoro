@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<pages:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pomodoro.RegisterPopup"
+             xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup">
+    
+    <StackLayout Margin="12"
+                 Padding="24"
+                 BackgroundColor="#a1457ca3"
+                 HorizontalOptions="Center"
+                 VerticalOptions="Center">
+        <StackLayout>
+            <Label Text="Email" />
+            <Entry x:Name="entryEmail" FontSize="30"
+                   Text="username@email.com" />
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Username" />
+            <Entry x:Name="entryUsername" FontSize="30"
+                   Text="username@email.com" />
+        </StackLayout>
+        <StackLayout>
+            <Label Text="Password" />
+            <Entry x:Name="entryPassword" FontSize="30"
+                   IsPassword="True"
+                   Text="password123" />
+        </StackLayout>
+        <Button BackgroundColor="#ffffff"
+                FontSize="30"
+                Text="Register"
+                TextColor="#457ca3" x:Name="btnRegister" Clicked="btnRegister_Clicked"/>
+    </StackLayout>
+</pages:PopupPage>
