@@ -9,7 +9,7 @@
                  Padding="24"
                  BackgroundColor="#a1457ca3"
                  HorizontalOptions="Center"
-                 VerticalOptions="Center">
+                  VerticalOptions="Center">
         <StackLayout>
             <Label Text="Email" />
             <Entry x:Name="entryEmail" FontSize="30"
