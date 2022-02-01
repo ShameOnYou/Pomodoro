@@ -56,7 +56,7 @@ Een gebruiker kan hun eigen ringtone uploaden.
 Een gebruiker kan een profile picture uploaden  
 ## Logboek
 ## Link video
-
+ 
 https://streamable.com/zga3y0#.mp4
 
 ## Bronnen
