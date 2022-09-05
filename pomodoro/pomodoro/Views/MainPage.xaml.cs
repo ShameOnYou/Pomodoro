@@ -352,5 +352,15 @@ namespace pomodoro
                 cancelTimer = true;
             }
         }
+
+        private void btnDeleteTask_Clicked(object sender, EventArgs e)
+        {
+
+            var pomTask = (Data.PomTask)((Button)sender).BindingContext;
+            Data.Databank.deleteTask(pomTask);
+            Data.Databank.Tasks.Remove(pomTask);
+            UpdateListView(ListViewTasks);
+
+        }
     }
 }

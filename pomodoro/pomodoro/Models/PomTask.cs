@@ -13,6 +13,7 @@ namespace pomodoro.Data
             TaskName = "New Task";
             active = false;
             taskId = -1;
+            visible = true;
         }
 
         public PomTask(string taskName, int currPom, int maxPom)
@@ -25,6 +26,7 @@ namespace pomodoro.Data
         public string TaskName { get; set; }
         public int CurrPom { get; set; }
         public int MaxPom { get; set; }
+        public bool visible { get; set; }
         public bool active { get; set; }
         public int taskId { get; set; }
         public bool ValidTask => (taskId > -1);

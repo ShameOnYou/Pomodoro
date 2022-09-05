@@ -1,0 +1,145 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+    <ContentPage NavigationPage.HasNavigationBar="false" xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="pomodoro.MainPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="baseBackground" TargetType="Grid">
+                <Setter Property="BackgroundColor" Value="#d95550"></Setter>
+            </Style>
+            <Style x:Key="baseButton" TargetType="Button">
+                <Setter Property="TextColor" Value="FloralWhite"></Setter>
+                <Setter Property="BackgroundColor" Value="#55555555"></Setter>
+                <Setter Property="CornerRadius" Value="5"></Setter>
+                <Setter Property="FontSize" Value="19"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+         
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid x:Name="MainGrid" Style="{DynamicResource baseBackground}"  HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.75*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition  Height="0.5*"/>
+                <RowDefinition  Height="2*"/>
+                <RowDefinition  Height="0.75*"/>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Column="0" Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label x:Name="lblUsername" FontSize="25" Margin="0,0,0,25" Grid.Column="0" VerticalTextAlignment="Center" HorizontalTextAlignment="Center">Hi Username</Label>
+                <Label Grid.Column="0" VerticalTextAlignment="Center" FontSize="20" HorizontalTextAlignment="Center" Margin="0,35,10,0">welcome back</Label>
+
+                <Image Source="profilepic.png" Grid.Column="1" x:Name="imgProfile"></Image>
+            </Grid>
+
+            <Grid Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+                <BoxView x:Name="Box8" BackgroundColor="#1affffff" WidthRequest="700"
+                     Grid.Column="0" Grid.Row="0" Grid.RowSpan="3"
+                     HorizontalOptions="CenterAndExpand"/>
+                <StackLayout Orientation="Horizontal" Grid.Column="0" Grid.Row="0" HorizontalOptions="Center" Margin="0,10,0,10">
+                    <Button x:Name="btnPomodoro" Style="{DynamicResource baseButton}" Text="Pomodoro" Clicked="btnPomodoro_Clicked"></Button>
+                    <Line X1="0" Y1="0" X2="0" Y2="50" Stroke="White"  Grid.Column="0" Grid.Row="0"></Line>
+                    <Button x:Name="btnShortBreak" Style="{DynamicResource baseButton}"  Text="Short Break" Clicked="btnShortBreak_Clicked"></Button>
+                    <Line X1="0" Y1="0" X2="0" Y2="50" Stroke="White"  Grid.Column="0" Grid.Row="0"></Line>
+                    <Button x:Name="btnLongBreak" Style="{DynamicResource baseButton}"  Text="Long Break" Clicked="btnLongBreak_Clicked"></Button>
+                </StackLayout>
+
+                <Label x:Name="lblTimer" Text="25 : 00" Grid.Column="0" Grid.Row="1" Margin="10,0" HorizontalOptions="Center" VerticalOptions="Center" FontSize="50"></Label>
+
+                <Button Text="Start" x:Name="btnStartTimer" Clicked="btnStartTimer_Clicked" Margin="10,0" HorizontalOptions="Center" VerticalOptions="Center" Grid.Column="0" Grid.Row="2" FontSize="25" WidthRequest="175"></Button>
+
+            </Grid>
+
+            <StackLayout x:Name="stackActiveTask" Grid.Column="0" Grid.Row="2" HorizontalOptions="Center" VerticalOptions="Center">
+                <Label x:Name="lblTaskName" Text="Please Select A Task" FontSize="18" TextColor="FloralWhite" FontAttributes="Bold" HorizontalOptions="Center"></Label>
+                <Label x:Name="lblTasksCompleted" Text="" FontSize="18" TextColor="FloralWhite" HorizontalOptions="Center"></Label>
+            </StackLayout>
+
+            <Grid Grid.Row="3" Style="{DynamicResource baseBackground}" Grid.RowSpan="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+
+
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Label x:Name="lblTaskLabel" Grid.Column="0" Grid.Row="0" FontSize="40" VerticalOptions="Start" TextColor="FloralWhite" HorizontalOptions="Center">Tasks</Label>
+                    <Button FontSize="13" Clicked="btnAddTask_Clicked" BackgroundColor="Transparent" Margin="45,0,0,0" x:Name="btnAddTask" Text="+ Add Task"></Button>
+                </StackLayout>
+
+                <StackLayout Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" BackgroundColor="#d95550">
+                    <ListView x:Name="ListViewTasks"  Grid.Column="0" Grid.Row="1" Grid.RowSpan="3" BackgroundColor="#d95550" SelectionMode="None" ItemTapped="ListViewTasks_ItemTapped" Margin="10,0">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Grid>
+                                        <Grid.Style>
+                                            <Style TargetType="Grid">
+                                                <Setter Property="Background" Value="#d95550    "/>
+                                                <Style.Triggers>
+                                                    <DataTrigger TargetType="Grid" Binding="{Binding active}" Value="true">
+                                                        <Setter Property="Background" Value="#dd6662"/>
+                                                    </DataTrigger>
+                                                    <DataTrigger TargetType="Grid" Binding="{Binding visible}" Value="true">
+                                                        <Setter Property="IsVisible" Value="false"/>
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </Grid.Style>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="8*" />
+                                            <ColumnDefinition Width="5*" />
+                                            <ColumnDefinition Width="2*" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label Grid.Column="0" Grid.Row="0" HorizontalTextAlignment="Center" FontSize="25" VerticalOptions="Center" Text="{Binding TaskName}"/>
+                                        <Label x:Name="LanguageRank" Grid.Column="1" Grid.Row="0" VerticalOptions="Center" FontSize="25"   HorizontalTextAlignment="End" Margin="0,0,15,0">
+                                            <Label.Text>
+                                                <MultiBinding StringFormat="{}{0} / {1}">
+                                                    <Binding Path="CurrPom" />
+                                                    <Binding Path="MaxPom" />
+                                                </MultiBinding>
+                                            </Label.Text>
+                                        </Label>
+                                        <Button x:Name="btnDeleteTask" Grid.Column="2" Grid.Row="0" VerticalOptions="Center" FontSize="25" Text="X" Clicked="btnDeleteTask_Clicked"></Button>
+                                    </Grid>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </Grid>
+
+
+
+
+
+        </Grid>
+
+    </ContentPage.Content>
+
+    
+
+</ContentPage>

@@ -48,8 +48,19 @@ namespace pomodoro.Data
                 .Child(taskToUpdate.Key)
                 .PutAsync(updatedTask);
         }
+        public async static void deleteTask(PomTask task)
+        {
+            var taskToDelete = (await fbClient.Child("Users").Child(userKey).Child("Tasks").OnceAsync<PomTask>()).Where(x => x.Object.taskId == task.taskId).FirstOrDefault();
+            await fbClient
+               .Child("Users")
+               .Child(userKey)
+               .Child("Tasks")
+               .Child(taskToDelete.Key)
+               .DeleteAsync();
+        }
 
-        public async static Task addTask(PomTask newTask)
+
+            public async static Task addTask(PomTask newTask)
         {
             int id;
             if (!Tasks.Any())
@@ -75,7 +86,7 @@ namespace pomodoro.Data
             var checkEmail = (await fbClient.Child("Users").OnceAsync<Users>()).Where(x => x.Object.Email == email).FirstOrDefault();
             if(checkEmail == null)
             {
-                var newUser = new Users() { Email = email, Username = username, Password = password  };
+                var newUser = new Users() { Email = email, Username = username, Password = password};
 
                 await fbClient
                 .Child("Users")
