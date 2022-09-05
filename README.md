@@ -35,26 +35,10 @@ De gebruiker moet taken kunnen toevoegen aan een todo list, deze moeten opgeslag
 ![alt text](https://i.imgur.com/hKKRYMj.png)
  
 
-* Rapports 
-
-De Gebruiker moet kunnen zien   hoeveel tijd er word besteed aaan elke taak. In rapports kan gezien worden of ze zich aan de timer hebben gehouden, op welke dagen ze gewerkt hebben, hoe lang ze gewerkt hebben, of ze een taak gecomplete hebben op een bepaalde dag en of ze de deadline van deze taak gemist hebben. 
-
- 
-
-* Instellingen 
-
-Sommige mensen willen hun werk tijd misschien langer dan 25 minuten, dit moet kunnen aangepast worden in de instellingen, hier zullen ook verschillende alarm sounds instaan, en andere “quality of life” options zoals auto start timer etc.  
-
- 
-
-* Extra’s 
-
-Een gebruiker kan foto’s toevoegen aan tasks 
-
-Een gebruiker kan hun eigen ringtone uploaden. 
-
-Een gebruiker kan een profile picture uploaden  
 ## Logboek
+
+2/05/2022 -> add delete task functionaliteit
+
 ## Link video
  
 https://streamable.com/zga3y0#.mp4
